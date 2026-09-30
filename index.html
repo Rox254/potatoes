@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nyandarua Potato Farms | Fresh Quality Potatoes</title>
+    <style>
+        /* CSS Reset and Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-green: #2e7d32;
+            --dark-green: #1b5e20;
+            --accent-purple: #ab47bc;
+            --light-bg: #f1f8e9;
+            --text-dark: #333;
+        }
+
+        body {
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: #fff;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--primary-green);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #c8e6c9;
+        }
+
+        /* Hero Section */
+        .hero {
+            /* Using one of your images as the background */
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('potato1.jpg') center/cover no-repeat;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            background-color: var(--accent-purple);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.2s;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: #8e24aa;
+            transform: translateY(-2px);
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 10%;
+            background-color: var(--light-bg);
+            text-align: center;
+        }
+
+        .about h2 {
+            color: var(--dark-green);
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .about p {
+            max-width: 800px;
+            margin: 0 auto 1.5rem auto;
+            font-size: 1.1rem;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 5rem 5%;
+        }
+
+        .gallery h2 {
+            text-align: center;
+            color: var(--dark-green);
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 10%;
+            background-color: var(--dark-green);
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+        }
+
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: #aaa;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Hidden on mobile for simplicity */
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">Nyandarua Potato Farms</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#gallery">Our Farm</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Fresh & Quality Potatoes from Nyandarua</h1>
+        <p>Grown in the fertile soils and cool climate of Nyandarua County. We supply high-quality potatoes for wholesale and retail.</p>
+        <a href="#contact" class="btn">Order Now</a>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2>About Our Farm</h2>
+        <p>Located in the heart of Nyandarua County, our farm is dedicated to growing the finest, healthiest potatoes. The region's rich volcanic soil and favorable weather conditions allow us to produce potatoes that are perfect for chips, boiling, and mashing.</p>
+        <p>We take pride in sustainable farming practices, ensuring that every potato harvested meets the highest standards of quality and taste.</p>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <h2>Our Potato Fields</h2>
+        <div class="gallery-grid">
+            <!-- Make sure your images are saved with these exact names in the same folder -->
+            <img src="potato1.jpg" alt="Potato field 1">
+            <img src="potato2.jpg" alt="Potato field 2">
+            <img src="potato3.jpg" alt="Potato field 3">
+            <img src="potato4.jpg" alt="Potato field 4">
+            <img src="potato5.jpg" alt="Potato field 5">
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Contact Us for Orders</h2>
+        <div class="contact-info">
+            <p>📍 Location: Nyandarua County, Kenya</p>
+            <p>📞 Phone: <strong>0718625691</strong></p>
+        </div>
+        <!-- This link opens WhatsApp with your number and a pre-filled message -->
+        <a href="https://wa.me/254718625691?text=Hello%20Nyandarua%20Potato%20Farms,%20I%20would%20like%20to%20make%20an%20order." class="whatsapp-btn" target="_blank">
+            💬 Chat with us on WhatsApp
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Nyandarua Potato Farms. All rights reserved. | Call: 0718625691</p>
+    </footer>
+
+</body>
+</html>
